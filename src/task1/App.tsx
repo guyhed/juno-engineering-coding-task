@@ -1,13 +1,13 @@
 import logo from '../logo.svg';
-import './App.css';
 import ImageCarousel from "./ImageCarousel";
 
 function App() {
-  return (
-      <div>
-        <ImageCarousel />
-      </div>
-  );
+  return (<div>
+    <div>Here is an image carousel:</div>
+    <div>
+      <ImageCarousel />
+    </div>
+  </div>);
 }
 
 export default App;
