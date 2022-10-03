@@ -4,7 +4,7 @@ const useLoadImageUrls = (getImageUrls: () => Promise<string[]>) => {
     const [urls, setUrls] = useState<string[] | null>(null);
     useEffect(() => {
         getImageUrls().then(setUrls)
-    },[getImageUrls]);
+    }, [getImageUrls]);
     return urls;
 }
 export default useLoadImageUrls

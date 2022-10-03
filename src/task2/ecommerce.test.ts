@@ -19,25 +19,25 @@ test("Ecommerce - fetchOrderById", async () => {
 });
 
 test("Ecommerce - getAllOrders should get an order for any valid id", async () => {
-    const all = await getAllOrders(testIds,getById);
+    const all = await getAllOrders(testIds, getById);
     expect(all.length).toEqual(testIds.length);
 });
 
-test("Ecommerce - _bucketOrdersByDate",  () => {
+test("Ecommerce - _bucketOrdersByDate", () => {
     const groups = _bucketOrdersByDate(testOrders);
     expect(Object.keys(groups).length).toEqual(3);
-    expect(Object.values(groups).map(g=>g.length).sort()).toEqual([1,1,2]);
+    expect(Object.values(groups).map(g => g.length).sort()).toEqual([1, 1, 2]);
 });
 
-test("Ecommerce - _bucketOrdersByUsers",  () => {
+test("Ecommerce - _bucketOrdersByUsers", () => {
     const groups = _bucketOrdersByUsers(testOrders);
-    expect(Object.keys(groups).sort()).toEqual(["shaul","shlomo"]);
-    expect(Object.values(groups).map(g=>g.length).sort()).toEqual([2,2]);
+    expect(Object.keys(groups).sort()).toEqual(["shaul", "shlomo"]);
+    expect(Object.values(groups).map(g => g.length).sort()).toEqual([2, 2]);
 });
 
 
-test("Ecommerce - _getLast2WeeksOrders",  () => {
-    const orders = _getLast2WeeksOrders(testOrders,now);
+test("Ecommerce - _getLast2WeeksOrders", () => {
+    const orders = _getLast2WeeksOrders(testOrders, now);
     expect(orders.length).toEqual(3);
 });
 
